@@ -1,0 +1,25 @@
+{
+  "name": "nodejs-documentation",
+  "version": "1.0.0",
+  "description": "- https://jsdoc.app/\r - https://github.com/jsdoc/jsdoc\r - https://archive.is/20130415103630/http://lxr.mozilla.org/mozilla/source/js/rhino/examples/jsdoc.js\r - https://documentation.js.org/\r - https://github.com/documentationjs/documentation/blob/master/docs/GETTING_STARTED.md\r - https://github.com/documentationjs/documentation\r - https://en.wikipedia.org/wiki/JSDoc",
+  "main": "index.js",
+  "dependencies": {
+    "documentation": "^11.0.0",
+    "stream-array": "^1.1.2",
+    "vinyl-fs": "^3.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JC-OH/NodeJS-Documentation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JC-OH/NodeJS-Documentation/issues"
+  },
+  "homepage": "https://github.com/JC-OH/NodeJS-Documentation#readme"
+}
