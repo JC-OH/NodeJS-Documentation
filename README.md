@@ -36,6 +36,7 @@ Lint files for non-standard or incorrect documentation
 information, returning a potentially-empty string
 of lint information intended for human-readable output.
 
+표준이 아니거나 잘못된 문서 정보를위한 Lint 파일. 사람이 읽을 수있는 출력을 위해 잠재적으로 빈 린트 (lint) 정보를 반환합니다.
 ### Parameters
 
 -   `indexes` **([Array][17]&lt;[string][18]> | [string][18])** files to process
@@ -72,6 +73,7 @@ Returns **[Promise][21]** promise with lint results
 Generate JavaScript documentation as a list of parsed JSDoc
 comments, given a root file as a path.
 
+루트 파일을 경로로 지정하면 JavaScript 문서를 구문 분석 된 JSDoc 주석의 목록으로 생성합니다.
 ### Parameters
 
 -   `indexes` **([Array][17]&lt;[string][18]> | [string][18])** files to process
@@ -119,6 +121,8 @@ and config as input and return Promises with results,
 like stringified JSON, markdown strings, or Vinyl objects for HTML
 output.
 
+문서의 형식은 주석 및 구성을 입력으로 사용하여 문자열 형식의 JSON, markdown 문자열 또는 HTML 출력용 Vinyl 객체와 같은 결과가있는 약속을 반환하는 모듈 방식입니다.
+
 ## formats.html
 
 Formats documentation as HTML.
@@ -150,6 +154,9 @@ Returns **[Promise][21]&lt;[Array][17]&lt;[Object][19]>>** Promise with results
 Formats documentation as
 [Markdown][23].
 
+Markdown으로 문서 형식을 지정합니다.
+
+
 ### Parameters
 
 -   `comments` **[Array][17]&lt;[Object][19]>** parsed comments
@@ -172,6 +179,8 @@ documentation.build(['index.js'])
 Returns **[Promise][21]&lt;[string][18]>** a promise of the eventual value
 
 ## formats.json
+
+Formats documentation as a JSON string.
 
 Formats documentation as a JSON string.
 
