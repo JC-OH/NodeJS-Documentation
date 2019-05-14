@@ -24,17 +24,33 @@ if (true) {
     });
 }
 
-if (true) {
+if (false) {
 
     // https://github.com/documentationjs/documentation/issues/869
     // Version 9.1.1 and this happens again during the standard HTML generation. Adding the second option: {shallow: false} fixes it
-
 
     documentation.build(['./files/pretreatment.js'], {shallow: true})
         .then(documentation.formats.md)
         .then(output => {
             // output is a string of Markdown data
             fs.writeFileSync('./docs/test.md', output);
+        })
+        .then(()=> {
+            fs.unlinkSync('./files/pretreatment.js')
         });
 
+}
+
+if (true) {
+    var streamArray = require('stream-array');
+    var vfs = require('vinyl-fs');
+
+    documentation.build(['./files/pretreatment.js'], {shallow: true})
+        .then(documentation.formats.html)
+        .then(output => {
+            streamArray(output).pipe(vfs.dest('./docs/test'));
+        })
+        .then(()=> {
+            //fs.unlinkSync('./files/pretreatment.js')
+        });
 }

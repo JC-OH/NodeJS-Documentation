@@ -11,6 +11,81 @@
 %>
 ```
 
+## Example
+### Function
+```angular2
+/**
+ * @function
+ * @param {Array<Object>} comments - an array of comments to be output
+ * @param {Object} options - theme options
+ * @param {ThemeCallback} callback - see below
+ */
+
+/**
+ * @callback ThemeCallback
+ * @param {?Error} error
+ * @param {?Array<vinyl.File>} output
+ */
+```
+### Class
+```angular2
+/**
+ * module description
+ * @module MyClass
+ */
+ //constants to be documented. 
+ //I usually use the @const, @readonly and @default tags for them
+/** @const {String} [description] */
+const CONST_1 = "1";
+/** @const {Number} [description] */
+const CONST_2 = 2;
+
+//An example class
+/** MyClass description */
+class MyClass {
+
+    //the class constructor
+    /**
+     * constructor description
+     * @param  {[type]} config [description]
+     */
+    constructor(config) {
+        //class members. Should be private. 
+        /** @private */
+        this.member1 = config;
+        /** @private */
+        this.member2 = "bananas";
+    }
+
+    //A normal method, public
+    /** methodOne description */
+    methodOne() {
+       console.log( methodThree("I like bananas"));
+    }
+
+    //Another method. Receives a Fruit object parameter, public
+    /**
+     * methodTwo description
+     * @param  {Object} fruit      [description]
+     * @param  {String} fruit.name [description]
+     * @return {String}            [description]
+     */
+    methodTwo(fruit) {
+        return "he likes " + fruit.name;
+    }
+
+    //private method
+    /**   
+     * methodThree description
+     * @private
+     * @param  {String} str [description]
+     * @return {String}     [description]
+     */
+    methodThree(str) {
+       return "I think " + str;
+    }
+}
+```
 ## Reference
 - https://jsdoc.app/
 - https://github.com/jsdoc/jsdoc

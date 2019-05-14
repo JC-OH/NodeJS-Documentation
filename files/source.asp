@@ -37,51 +37,19 @@
 '// Things to do: 
 '//
 '//////////////////////////////////////////////////////////////////////////////////////////////////
-'/**
-' * Build a pipeline of comment handlers.
-' * @param {Array<Function>} fns - Pipeline elements. Each is a function that accepts
-' *  a comment and can return a comment or undefined (to drop that comment).
-' * @returns {Function} pipeline
-' * @private
-' */
-
 
 '/**
-' * Lint files for non-standard or incorrect documentation
-' * information, returning a potentially-empty string
-' * of lint information intended for human-readable output.
-' *
-' * @param {Array<string>|string} indexes files to process
-' * @param {Object} args args
-' * @param {Array<string>} args.external a string regex / glob match pattern
-' * that defines what external modules will be whitelisted and included in the
-' * generated documentation.
-' * @param {boolean} [args.shallow=false] whether to avoid dependency parsing
-' * even in JavaScript code.
-' * @param {string} [args.inferPrivate] a valid regular expression string
-' * to infer whether a code element should be private, given its naming structure.
-' * For instance, you can specify `inferPrivate: '^_'` to automatically treat
-' * methods named like `_myMethod` as private.
-' * @param {string|Array<string>} [args.extension] treat additional file extensions
-' * as JavaScript, extending the default set of `js`, `es6`, and `jsx`.
-' * @returns {Promise} promise with lint results
-' * @public
-' * @example
-' * documentation.lint('file.js').then(lintOutput => {
-' *   if (lintOutput) {
-' *     console.log(lintOutput);
-' *     process.exit(1);
-' *   } else {
-' *     process.exit(0);
-' *   }
-' * });
-' */
-
+'* Generate style attrubute code.
+'* @author	jcoh
+'* @name	SetBGColor
+'* @param	{string} val - A string that is Hex Code RGB
+'* @return	{string} HTML style tag
+'*/
 '================================================================================================================
 '= SetBGColor
 '= 
 '================================================================================================================
-Function SetBGColor (ByRef val)
+Function SetBGColor (ByVal val)
 	Dim style : style = ""
 	If chkEmptyGlobal(val) = FALSE Then
 		style = "style=""background-color:" & val & " !important;"""
@@ -89,6 +57,14 @@ Function SetBGColor (ByRef val)
 	Val = ""
 	SetBGColor = style
 End Function
+'/**
+'* 
+'* @author	jcoh
+'* @name	GetHiddenInput
+'* @param	{string} name - a name of hidden input.
+'* @param	{string} val - value
+'* @return	{string} HTML hidden input tag
+'*/
 '================================================================================================================
 '= GetHiddenInput
 '= 
@@ -1686,6 +1662,15 @@ Function RequestToServer (ByVal url,ByVal data,ByVal response_type)
 		Set objXMLHTTP = Nothing
 	End If
 End Function
+'/**
+'* Returns one of two objects, depending on the evaluation of an expression.
+'* @name	IIF
+'* @function
+'* @param	{boolean} psdStr - A valid Boolean expression
+'* @param	{*} trueStr - Value to return if boolean_expression evaluates to true.
+'* @param	{*} falseStr - Value to return if boolean_expression evaluates to false.
+'*/
+
 '==================================================================================================
 '= Name: IIF
 '= Desc: Returns one of two objects, depending on the evaluation of an expression.
@@ -1701,7 +1686,11 @@ End Function
 Public Function UCWords (ByVal val)
 	UCWords = IIF(chkEmptyGlobal(val),"",UCase(Left(val,1)) & LCase(Right(val, Len(val) - 1)))
 End Function
-
+'/**
+'* Indicates a specified variable is empty, null or null string.
+'* @name	IsBlank
+'* @param	{*} var	Any type
+'*/
 '==================================================================================================
 '= Name: IsBlank
 '= Desc: 
@@ -1715,7 +1704,11 @@ Public Function IsBlank(ByVal var)
 		IsBlank = (IsEmpty(var) OR IsNull(var) OR var = "")
 	End If
 End Function
-
+'/**
+'* Indicates a specified variable has value or not.
+'* @name	IsNotBlank
+'* @param	{*} var	Any type
+'*/
 '==================================================================================================
 '= Name: IsNotBlank
 '= Desc: 
